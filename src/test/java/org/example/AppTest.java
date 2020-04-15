@@ -26,9 +26,9 @@ public class AppTest {
     }
 
     @Test
-    public void fooBarIfCaseReturnsInputMessage() {
+    public void fooBarReturnsInputMessage() {
 
-        FooBar testFoo = new FooBarIfCase();
+        FooBar testFoo = new FooBarSwitch();
         // Ввод числа меньше или равного нулю, что не соответствует условиям задачи
         String resultString = testFoo.FooBar(-1);
         //Предполагаемый ответ от метода
@@ -39,10 +39,23 @@ public class AppTest {
     }
     @Test
     public void fooBarRecursionTest(){
-
         FooBar testFoo = new FooBarRecursion();
         String resultString = testFoo.FooBar(15);
         String rightResult = "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 FooBar ";
         Assert.assertEquals(resultString, rightResult);
+    }
+    @Test
+    public void fooBarMinimumBranchesTestReturnRightString(){
+        FooBar testFoo = new FooBarMinimumBranches();
+        String resultString = testFoo.FooBar(13);
+        String rightResult = "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 ";
+        Assert.assertEquals(resultString,rightResult);
+    }
+    @Test
+    public void fooBarSwitchTestReturnRightString(){
+        FooBar testFoo = new FooBarSwitch();
+        String resultString = testFoo.FooBar(20);
+        String rightResult = "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 FooBar 16 17 Foo 19 Bar ";
+        Assert.assertEquals(resultString,rightResult);
     }
 }

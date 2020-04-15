@@ -10,7 +10,7 @@ public class App {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите целое число больше 0");
         int n = scan.nextInt();
-        FooBar fooBarIfCase = new FooBarMinimumIf();
+        FooBar fooBarIfCase = new FooBarSwitch();
         System.out.print(fooBarIfCase.FooBar(n));
         scan.close();
     }
